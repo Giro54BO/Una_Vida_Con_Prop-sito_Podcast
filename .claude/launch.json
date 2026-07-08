@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static-site",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "cd '/Users/peterverastegui/Documents/GitHub/Una_Vida_Con_Propósito_Podcast' && exec /usr/bin/python3 -m http.server \"$PORT\""],
+      "port": 8080,
+      "autoPort": true
+    }
+  ]
+}

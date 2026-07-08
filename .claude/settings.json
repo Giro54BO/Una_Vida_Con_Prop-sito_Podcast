@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -oE '[A-Za-z0-9_$]{0,3}Mb\\\\s*=' /Users/peterverastegui/.claude/projects/-Users-peterverastegui-Documents-GitHub-Una-Vida-Con-Prop-sito-Podcast/25969c56-4b0f-49a1-b7a2-a25e22523d0b/tool-results/bhzbyneou.txt)",
+      "Bash(python3 -c ' *)",
+      "Bash(pkill -f \"http.server 8123\")",
+      "Bash(pkill -f \"remote-debugging-port=9333\")"
+    ]
+  }
+}

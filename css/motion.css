@@ -1,0 +1,67 @@
+/* Default state: fully visible. Animation is additive, never gates content. */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity var(--dur-slow) var(--ease-out-expo),
+      transform var(--dur-slow) var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal--fade {
+    transform: none;
+  }
+
+  .adn__host.reveal {
+    transform: translateY(0) scale(1.04);
+  }
+  .adn__host.reveal.is-visible {
+    transform: scale(1);
+  }
+
+  /* Secondary buttons (opt-in .btn--anim-gradient only): shimmering gradient
+     border + gradient text, black + orange brand colors */
+  .btn--anim-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 100%;
+    animation: btn-gradient-shift 4s ease-in-out infinite;
+  }
+  .btn--anim-gradient::before {
+    animation: btn-gradient-shift 4s ease-in-out infinite;
+  }
+
+  .btn--outline-on-dark.btn--anim-gradient {
+    background-image: linear-gradient(115deg, var(--ink), var(--orange), var(--ember), var(--orange), var(--ink));
+  }
+  .btn--outline-on-light.btn--anim-gradient {
+    background-image: linear-gradient(115deg, var(--ink), var(--rust), var(--orange), var(--rust), var(--ink));
+  }
+
+  /* Hover: stop the shimmer, show solid readable orange text on the solid
+     black fill from components.css */
+  .btn--anim-gradient:hover {
+    background-image: none;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: var(--orange);
+    color: var(--orange);
+    animation: none;
+  }
+
+  @keyframes btn-gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}

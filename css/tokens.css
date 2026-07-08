@@ -1,0 +1,81 @@
+:root {
+  /* ---- Brand colors (exact hex from Guía de Marca — do not alter) ---- */
+  --ink: #010101;
+  --cream: #f3ece6;
+  --orange: #ff9a00;
+  --ember: #ef5500;
+  --rust: #010101;
+  --graphite: #585757;
+
+  /* Hero gradient tokens (editable) */
+  /* Provide a hex fallback stop before the oklab/oklch stops for broader browser support */
+  --hdr-gradient: radial-gradient(
+    farthest-corner circle at 50% 101% in oklab,
+    #ff9a00 13% 0%,
+    rgb(100% 60% 0%) 13% 0%,
+    48%,
+    oklch(0% 0.00 0) 100%
+  );
+  --sdr-gradient: radial-gradient(
+    farthest-corner circle at 50% 101%,
+    #f90 13% 0%,
+    #f90 13% 0%,
+    48%,
+    #000 100%
+  );
+
+  /* ---- Derived surface / text roles ---- */
+  --bg-dark: var(--ink);
+  --bg-light: var(--cream);
+  --text-on-dark: var(--cream);
+  --text-on-dark-muted: color-mix(in oklch, var(--cream) 70%, transparent);
+  --text-on-light: var(--ink);
+  --text-on-light-muted: var(--graphite);
+  --accent-fill: var(--orange);
+  --accent-text-on-light: var(--rust);
+  --accent-hover: var(--ember);
+
+  --hairline-on-light: color-mix(in oklch, var(--graphite) 25%, transparent);
+  --hairline-on-dark: color-mix(in oklch, var(--cream) 18%, transparent);
+  --scrim-strong: color-mix(in oklch, var(--ink) 92%, var(--rust) 8%);
+
+  /* ---- Type families ---- */
+  --font-display: "Momo Trust Display", "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  /* ---- Fluid type scale ---- */
+  --step--1: clamp(0.78rem, 0.74rem + 0.2vw, 0.875rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.15rem, 1.08rem + 0.35vw, 1.375rem);
+  --step-2: clamp(1.5rem, 1.35rem + 0.75vw, 1.9rem);
+  --step-3: clamp(1.9rem, 1.6rem + 1.5vw, 2.6rem);
+  --step-4: clamp(2.25rem, 1.7rem + 2.75vw, 3.75rem);
+  --step-5: clamp(2.75rem, 1.7rem + 5.25vw, 6rem);
+
+  /* ---- Spacing scale (8px base) ---- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+  --space-8: 8rem;
+  --space-9: 10rem;
+
+  --content-max: 1280px;
+  --content-narrow: 760px;
+  --edge-pad: clamp(1.25rem, 4vw, 4rem);
+
+  /* ---- Motion ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --dur-fast: 220ms;
+  --dur-med: 480ms;
+  --dur-slow: 900ms;
+
+  /* ---- Z-index scale ---- */
+  --z-base: 0;
+  --z-nav: 100;
+  --z-overlay: 200;
+}
