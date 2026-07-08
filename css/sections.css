@@ -66,7 +66,7 @@
   position: relative;
   z-index: 3;
   padding: var(--space-9) var(--edge-pad) var(--space-7);
-  max-width: 920px;
+  max-width: 1600px;
 }
 
 .hero__title {
