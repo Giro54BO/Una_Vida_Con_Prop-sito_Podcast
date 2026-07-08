@@ -220,6 +220,20 @@
   max-width: 100%;
 }
 
+.manifiesto__preview {
+  margin-bottom: var(--space-5);
+  max-width: 520px;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 22px 45px -30px rgba(0, 0, 0, 0.3);
+}
+
+.manifiesto__preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .manifiesto__glyph {
   width: 84px;
   height: auto;
