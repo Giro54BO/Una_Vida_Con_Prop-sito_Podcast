@@ -35,6 +35,65 @@
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
+  /* ---- Metric count-up (Comunidad section) ---- */
+  const statFigures = document.querySelectorAll(".stat__figure[data-count-to]");
+  if (statFigures.length) {
+    const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+
+    const animateCount = (el, delay) => {
+      const target = parseInt(el.dataset.countTo, 10);
+      const suffix = el.dataset.suffix || "";
+      const locale = el.dataset.locale;
+      const format = (n) => (locale ? n.toLocaleString(locale) : String(n));
+
+      if (reducedMotionQuery.matches) {
+        el.textContent = format(target) + suffix;
+        el.classList.add("is-counted");
+        return;
+      }
+
+      el.style.setProperty("--stat-delay", `${delay}ms`);
+      const duration = 1400;
+      let start = null;
+
+      const tick = (now) => {
+        if (start === null) start = now;
+        const elapsed = now - start - delay;
+        if (elapsed < 0) {
+          requestAnimationFrame(tick);
+          return;
+        }
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.round(easeOutExpo(progress) * target);
+        el.textContent = format(value) + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.classList.add("is-counted");
+        }
+      };
+      requestAnimationFrame(tick);
+    };
+
+    if ("IntersectionObserver" in window) {
+      const statIo = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const figures = entry.target.querySelectorAll(".stat__figure[data-count-to]");
+            figures.forEach((figure, i) => animateCount(figure, i * 180));
+            statIo.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.5 }
+      );
+      const metricsBlock = document.querySelector(".comunidad__stats");
+      if (metricsBlock) statIo.observe(metricsBlock);
+    } else {
+      statFigures.forEach((el) => animateCount(el, 0));
+    }
+  }
+
   /* ---- Hero video: skip entirely under reduced motion ---- */
   const heroVideo = document.querySelector("[data-hero-video]");
   if (heroVideo) {

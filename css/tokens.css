@@ -4,7 +4,6 @@
   --cream: #f3ece6;
   --orange: #ff9a00;
   --ember: #ef5500;
-  --rust: #010101;
   --graphite: #585757;
 
   /* Hero gradient tokens (editable) */
@@ -32,12 +31,10 @@
   --text-on-light: var(--ink);
   --text-on-light-muted: var(--graphite);
   --accent-fill: var(--orange);
-  --accent-text-on-light: var(--rust);
   --accent-hover: var(--ember);
 
   --hairline-on-light: color-mix(in oklch, var(--graphite) 25%, transparent);
   --hairline-on-dark: color-mix(in oklch, var(--cream) 18%, transparent);
-  --scrim-strong: color-mix(in oklch, var(--ink) 92%, var(--rust) 8%);
 
   /* ---- Type families ---- */
   --font-display: "Momo Trust Display", "Space Grotesk", "Helvetica Neue", Arial, sans-serif;

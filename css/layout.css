@@ -48,12 +48,7 @@
 .scrim-bottom {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(1, 1, 1, 0) 40%,
-    rgba(1, 1, 1, 0.55) 75%,
-    rgba(1, 1, 1, 0.88) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
   pointer-events: none;
 }
 

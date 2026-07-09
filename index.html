@@ -9,10 +9,25 @@
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+  <!-- Rich link previews (iMessage, WhatsApp, Slack, Facebook, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Una Vida Con Propósito" />
+  <meta property="og:locale" content="es_BO" />
   <meta property="og:title" content="Una Vida Con Propósito — Podcast" />
   <meta property="og:description" content="Conversaciones largas y honestas sobre propósito, identidad y transformación." />
-  <meta property="og:image" content="/img/photos/group/hosts-horizontal-1920.jpg" />
-  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Leonardo, Rodrigo y Aldana, conductores de Una Vida Con Propósito, grabando el episodio piloto." />
+  <!-- og:url intentionally omitted until the site has a live domain — add
+       <meta property="og:url" content="https://..." /> once deployed. -->
+
+  <!-- X / Twitter card (some other apps also read this as a fallback) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Una Vida Con Propósito — Podcast" />
+  <meta name="twitter:description" content="Conversaciones largas y honestas sobre propósito, identidad y transformación." />
+  <meta name="twitter:image" content="/img/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Leonardo, Rodrigo y Aldana, conductores de Una Vida Con Propósito, grabando el episodio piloto." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,6 +48,8 @@
     <a href="#top" aria-label="Una Vida Con Propósito — inicio">
       <img class="nav__logo nav__logo-dark" src="img/logo/logo-nav-white.png" alt="Una Vida Con Propósito" width="192" height="40" />
       <img class="nav__logo nav__logo-light" src="img/logo/logo-nav-black.png" alt="Una Vida Con Propósito" width="192" height="40" />
+      <img class="nav__icon nav__icon-dark" src="img/logo/logo-icon-white.png" alt="Una Vida Con Propósito" width="30" height="30" />
+      <img class="nav__icon nav__icon-light" src="img/logo/logo-icon-black.png" alt="Una Vida Con Propósito" width="30" height="30" />
     </a>
     <nav class="nav__links" aria-label="Navegación principal">
       <a href="#que-es">Qué es</a>
@@ -47,12 +64,14 @@
 
     <!-- 1. HERO -->
     <section class="hero" id="top">
-      <div class="hero__media" aria-hidden="true"></div>
+      <div class="hero__media" aria-hidden="true">
+        <img src="img/01-hero-background.jpg" alt="" width="1920" height="1080" />
+      </div>
       <div class="hero__scrim" aria-hidden="true"></div>
       <canvas class="hero__shader" data-hero-shader aria-hidden="true"></canvas>
       <div class="hero__content">
-        <p class="eyebrow" style="color: var(--text-on-dark-muted); margin-bottom: var(--space-3);">Un podcast de conversación larga</p>
-        <h1 class="hero__title">Claridad<br />dentro del <em>silencio</em>.</h1>
+        <h1 class="visually-hidden">Una Vida Con Propósito — Podcast</h1>
+        <img class="hero__logo" src="img/02-hero-logo-outline.png" alt="Una Vida Con Propósito — Podcast" width="1600" height="372" />
         <p class="hero__lead">Tres voces, cero pose. Conversaciones honestas sobre propósito, identidad y transformación — para quienes están dispuestos a detenerse a escuchar de verdad.</p>
         <div class="hero__ctas">
           <a class="btn btn--fill-on-dark" href="#episodios">Ver episodios</a>
@@ -66,7 +85,7 @@
     </section>
 
     <!-- 2. QUÉ ES UVCP -->
-    <section class="section section--light" id="que-es">
+    <section class="section section--dark" id="que-es">
       <div class="wrap">
         <div class="que-es__grid">
           <div class="reveal">
@@ -83,12 +102,10 @@
           </div>
           <div class="media-frame que-es__media reveal">
             <img
-              src="img/photos/group/hosts-vertical-900.jpg"
-              srcset="img/photos/group/hosts-vertical-600.jpg 600w, img/photos/group/hosts-vertical-900.jpg 900w, img/photos/group/hosts-vertical-1200.jpg 1200w"
-              sizes="(min-width: 900px) 40vw, 100vw"
+              src="img/04-que-es-red-toned.jpg"
               alt="Los tres conductores de Una Vida Con Propósito reunidos antes de grabar."
               loading="lazy"
-              width="900" height="1121"
+              width="600" height="746"
             />
           </div>
         </div>
@@ -99,9 +116,6 @@
     <section class="section section--dark manifiesto">
       <div class="wrap">
         <div class="manifiesto__inner reveal">
-          <div class="manifiesto__logo-wrap">
-            <img class="manifiesto__logo" src="assets/Logos/Logo Una Vida Con Propósito_Podcast-13.png" alt="Logo Una Vida Con Propósito" width="280" height="70" loading="lazy" />
-          </div>
           <p>Vivimos en piloto automático: vida acelerada, saturación de información, presión por producir, aparentar y avanzar.</p>
           <p>Una Vida Con Propósito existe para abrir un espacio distinto — una conversación honesta, sin urgencia, para mirar la propia vida con más conciencia.</p>
         </div>
@@ -117,46 +131,40 @@
       <div class="adn__grid">
         <div class="adn__host reveal">
           <img
-            src="img/photos/hosts/host-leonardo-1200.jpg"
-            srcset="img/photos/hosts/host-leonardo-480.jpg 480w, img/photos/hosts/host-leonardo-800.jpg 800w, img/photos/hosts/host-leonardo-1200.jpg 1200w, img/photos/hosts/host-leonardo-1600.jpg 1600w"
-            sizes="(min-width: 760px) 33vw, 100vw"
-            alt="Leonardo Landívar, conductor de Una Vida Con Propósito."
-            loading="lazy" width="1200" height="1800"
+            src="img/photos/hosts/leonardo-card.jpg"
+            alt="Leonardo Landívar Castro, conductor de Una Vida Con Propósito."
+            loading="lazy" width="479" height="560"
             style="width:100%; height:100%; object-fit:cover; object-position: top center;"
           />
           <div class="scrim-bottom" aria-hidden="true"></div>
           <div class="adn__host-text">
-            <p class="adn__host-name">Leonardo</p>
+            <p class="adn__host-name">Leonardo Landívar Castro</p>
             <p class="adn__host-role">Fragilidad y conciencia del presente.</p>
           </div>
         </div>
         <div class="adn__host reveal">
           <img
-            src="img/photos/hosts/host-rodrigo-1200.jpg"
-            srcset="img/photos/hosts/host-rodrigo-480.jpg 480w, img/photos/hosts/host-rodrigo-800.jpg 800w, img/photos/hosts/host-rodrigo-1200.jpg 1200w, img/photos/hosts/host-rodrigo-1600.jpg 1600w"
-            sizes="(min-width: 760px) 33vw, 100vw"
-            alt="Rodrigo Bellott, conductor de Una Vida Con Propósito."
-            loading="lazy" width="1200" height="1800"
+            src="img/photos/hosts/rodrigo-card.jpg"
+            alt="Rodrigo Bellott Machi, conductor de Una Vida Con Propósito."
+            loading="lazy" width="479" height="560"
             style="width:100%; height:100%; object-fit:cover; object-position: top center;"
           />
           <div class="scrim-bottom" aria-hidden="true"></div>
           <div class="adn__host-text">
-            <p class="adn__host-name">Rodrigo</p>
+            <p class="adn__host-name">Rodrigo Bellott Machi</p>
             <p class="adn__host-role">Reconstrucción del yo: cuerpo, mente y neurociencia.</p>
           </div>
         </div>
         <div class="adn__host reveal">
           <img
-            src="img/photos/hosts/host-aldana-1200.jpg"
-            srcset="img/photos/hosts/host-aldana-480.jpg 480w, img/photos/hosts/host-aldana-800.jpg 800w, img/photos/hosts/host-aldana-1200.jpg 1200w, img/photos/hosts/host-aldana-1600.jpg 1600w"
-            sizes="(min-width: 760px) 33vw, 100vw"
+            src="img/photos/hosts/aldana-card.jpg"
             alt="Aldana Fernández de Córdova, conductora de Una Vida Con Propósito."
-            loading="lazy" width="1200" height="1800"
+            loading="lazy" width="479" height="560"
             style="width:100%; height:100%; object-fit:cover; object-position: top center;"
           />
           <div class="scrim-bottom" aria-hidden="true"></div>
           <div class="adn__host-text">
-            <p class="adn__host-name">Aldana</p>
+            <p class="adn__host-name">Aldana Fernández de Córdova</p>
             <p class="adn__host-role">Mirada humanista, organizacional y la práctica cotidiana del propósito.</p>
           </div>
         </div>
@@ -195,10 +203,10 @@
           <span class="tag tag--lg tag--fill-ink">Sentido de vida</span>
           <span class="tag tag--md tag--outline">Identidad</span>
           <span class="tag tag--lg tag--fill-orange">Cuerpo y mente</span>
-          <span class="tag tag--md tag--outline-rust">Éxito y plenitud</span>
+          <span class="tag tag--md tag--outline">Éxito y plenitud</span>
           <span class="tag tag--lg tag--outline">Muerte, tiempo y urgencia de vivir</span>
           <span class="tag tag--sm tag--fill-ink">Coherencia</span>
-          <span class="tag tag--md tag--outline-rust">Crisis, duelo y reinvención</span>
+          <span class="tag tag--md tag--outline">Crisis, duelo y reinvención</span>
         </div>
         <a class="link-cta temas__cta reveal" href="#episodios">
           Ver episodios <span class="link-cta__arrow" aria-hidden="true">→</span>
@@ -216,9 +224,13 @@
               <h2 class="comunidad__title">Señales de confianza, no de escala</h2>
             </div>
             <p class="comunidad__copy">Estamos en etapa piloto: un primer episodio, un equipo de producción real y una comunidad que recién empieza a formarse. Preferimos mostrar eso con honestidad antes que inflar números.</p>
-            <p class="comunidad__metrics">En su primera semana en Instagram y Facebook: <strong>29&nbsp;mil</strong> visualizaciones · <strong>1.042</strong> interacciones · <strong>174</strong> nuevos seguidores.
-              <span class="comunidad__caption">Resultados iniciales del piloto — al 13 de mayo.</span>
-            </p>
+            <p class="comunidad__metrics">En su primera semana en Instagram y Facebook:</p>
+            <div class="comunidad__stats">
+              <span class="stat"><span class="stat__figure" data-count-to="29" data-suffix="&nbsp;mil">0</span> visualizaciones</span>
+              <span class="stat"><span class="stat__figure" data-count-to="1042" data-locale="es-BO">0</span> interacciones</span>
+              <span class="stat"><span class="stat__figure" data-count-to="174">0</span> nuevos seguidores</span>
+            </div>
+            <span class="comunidad__caption">Resultados iniciales del piloto — al 13 de mayo.</span>
             <a class="link-cta" href="#episodios" style="margin-top: var(--space-4); display: inline-flex;">
               Ver episodios <span class="link-cta__arrow" aria-hidden="true">→</span>
             </a>
@@ -237,12 +249,12 @@
     </section>
 
     <!-- 8. ALIANZAS PARA MARCAS -->
-    <section class="section section--rust-tint" id="alianzas">
+    <section class="section section--tint" id="alianzas">
       <div class="wrap">
         <div class="alianzas__head reveal">
           <p class="eyebrow">Para marcas</p>
           <h2>Una alianza, no una interrupción</h2>
-          <p style="margin-top: var(--space-3); font-size: var(--step-1); color: var(--text-on-light-muted);">UVCP ofrece algo difícil de comprar con pauta tradicional: intimidad intelectual. Quien pasa 90 a 120 minutos con una voz construye lealtad — y esa lealtad puede transferirse a una marca cuando la integración es honesta y útil.</p>
+          <p style="margin-top: var(--space-3); font-size: var(--step-1); color: var(--text-on-dark-muted);">UVCP ofrece algo difícil de comprar con pauta tradicional: intimidad intelectual. Quien pasa 90 a 120 minutos con una voz construye lealtad — y esa lealtad puede transferirse a una marca cuando la integración es honesta y útil.</p>
         </div>
         <div class="alianzas__list reveal">
           <div class="alianzas__item">
@@ -270,7 +282,7 @@
             <p>Confianza que se transfiere de la conversación a la marca.</p>
           </div>
         </div>
-        <a class="btn btn--fill-on-light alianzas__cta reveal" href="mailto:unavidaconpropositop@gmail.com?subject=Quiero%20patrocinar%20UVCP">Quiero patrocinar UVCP</a>
+        <a class="btn btn--outline-on-dark alianzas__cta reveal" href="mailto:unavidaconpropositop@gmail.com?subject=Quiero%20patrocinar%20UVCP">Quiero patrocinar UVCP</a>
       </div>
     </section>
 

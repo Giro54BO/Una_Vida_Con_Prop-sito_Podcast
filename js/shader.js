@@ -209,8 +209,6 @@
   }
 
   window.addEventListener("resize", resize, { passive: true });
-  hero.addEventListener("pointermove", onPointerMove, { passive: true });
-  hero.addEventListener("pointerleave", onPointerLeave, { passive: true });
 
   const io = new IntersectionObserver(
     (entries) => entries.forEach((e) => (e.isIntersecting ? start() : stop())),
