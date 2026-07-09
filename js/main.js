@@ -111,6 +111,40 @@
     reducedMotionQuery.addEventListener("change", applyMotionPreference);
   }
 
+  /* ---- Image slider (Episodios) ---- */
+  document.querySelectorAll("[data-slider]").forEach((slider) => {
+    const track = slider.querySelector("[data-slider-track]");
+    const prevBtn = slider.querySelector("[data-slider-prev]");
+    const nextBtn = slider.querySelector("[data-slider-next]");
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const stepSize = () => {
+      const first = track.querySelector(".slider__item");
+      if (!first) return track.clientWidth;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      return first.getBoundingClientRect().width + gap;
+    };
+
+    const updateButtons = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth - 1;
+      prevBtn.disabled = track.scrollLeft <= 0;
+      nextBtn.disabled = track.scrollLeft >= maxScroll;
+    };
+
+    const scrollByStep = (dir) => {
+      track.scrollBy({
+        left: dir * stepSize(),
+        behavior: reducedMotionQuery.matches ? "auto" : "smooth",
+      });
+    };
+
+    prevBtn.addEventListener("click", () => scrollByStep(-1));
+    nextBtn.addEventListener("click", () => scrollByStep(1));
+    track.addEventListener("scroll", updateButtons, { passive: true });
+    window.addEventListener("resize", updateButtons, { passive: true });
+    updateButtons();
+  });
+
   /* ---- Smooth-scroll CTAs to #episodios with fixed-nav offset ---- */
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {

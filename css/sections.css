@@ -345,6 +345,103 @@
   text-transform: uppercase;
 }
 
+/* ---- Image slider (Episodios) ---- */
+.slider {
+  margin-top: var(--space-7);
+}
+
+.slider__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.slider__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--step-3);
+  text-transform: none;
+  color: var(--text-on-dark);
+}
+
+.slider__nav {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.slider__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 61px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--ember);
+  transition: color var(--dur-fast) var(--ease-out-quart),
+    opacity var(--dur-fast) var(--ease-out-quart),
+    transform var(--dur-fast) var(--ease-out-quart);
+}
+
+.slider__btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slider__btn:hover:not(:disabled) {
+  color: var(--orange);
+}
+
+.slider__btn:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.slider__btn:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.slider__track {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider__track {
+    scroll-behavior: auto;
+  }
+}
+
+.slider__item {
+  flex: 0 0 min(80%, 439px);
+  scroll-snap-align: start;
+  aspect-ratio: 439 / 264;
+  overflow: hidden;
+  border-radius: 2px;
+  background: color-mix(in oklch, var(--cream) 8%, var(--ink));
+}
+
+.slider__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* =========================================================
    6. TEMAS
    ========================================================= */
