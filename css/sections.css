@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* brand gradient token as an underlay while the photo loads — edit in css/tokens.css */
+  /* brand gradient token as an underlay while the photo loads; edit in css/tokens.css */
   background: var(--hdr-gradient);
   background-color: var(--ink);
   background-repeat: no-repeat;
@@ -148,7 +148,7 @@
 
 @media (min-width: 900px) {
   .que-es__grid {
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -178,6 +178,20 @@
 .que-es__media {
   aspect-ratio: 4 / 5;
   border-radius: 2px;
+}
+
+/* Feathered edges: two crossed linear fades (intersected) dissolve all four
+   edges of the photo into the section background; corners fade doubly.
+   The 18%/82% stops set the fade band width on each side. */
+.que-es__media img {
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 18%, #000 82%, transparent),
+    linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, #000 18%, #000 82%, transparent),
+    linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  mask-composite: intersect;
 }
 
 /* =========================================================

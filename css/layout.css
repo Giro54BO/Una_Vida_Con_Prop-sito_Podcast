@@ -61,3 +61,6 @@
   font-size: var(--step-4);
   text-transform: uppercase;
 }
+.no-hyphenation {
+  hyphens: none;
+}

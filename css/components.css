@@ -56,7 +56,7 @@
   background: color-mix(in oklch, var(--accent-hover) 10%, transparent);
 }
 
-/* Opt-in modifier: animated gradient border (black + orange), brand-colored —
+/* Opt-in modifier: animated gradient border (black + orange), brand-colored;
    see css/motion.css for the shimmer animation (gated by prefers-reduced-motion). */
 .btn--anim-gradient {
   position: relative;
@@ -94,7 +94,7 @@
 }
 
 /* Hover: freeze on a solid, readable black-bg / orange-border state
-   instead of the shimmering gradient — see motion.css for the matching
+   instead of the shimmering gradient; see motion.css for the matching
    text-color override. */
 .btn--anim-gradient:hover::before {
   background: var(--orange);
@@ -205,7 +205,7 @@
 }
 
 /* On small screens the full wordmark gets cramped/distorted next to the
-   nav links — swap to the icon mark instead, same dark/light logic. */
+   nav links; swap to the icon mark instead, same dark/light logic. */
 .nav__icon {
   display: none;
   height: 30px;
